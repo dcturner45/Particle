@@ -32,10 +32,8 @@
                 [itemProvider loadItemForTypeIdentifier:(NSString*)kUTTypeURL options:nil completionHandler:^(NSURL *item, NSError *error) {
                     NSLog(@"final URL: %@", item.absoluteString);
                     NSDictionary *summaryDict = [self getSummaryForURL:item];
-                    /*NSString *summary = [summaryDict objectForKey:@"summary"];
-                     NSString *title = [summaryDict objectForKey:@"title"];*/
-                    NSString *summary = @"yadadadada";
-                    NSString *title = @"this here's the title";
+                    NSString *summary = [summaryDict objectForKey:@"summary"];
+                     NSString *title = [summaryDict objectForKey:@"title"];
                     NSString *fullHTML = [NSString stringWithFormat:@"<b>%@</b><br><br>%@", title, summary];
                     sleep(3);
                     dispatch_async(dispatch_get_main_queue(), ^(void) {
